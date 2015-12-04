@@ -54,7 +54,7 @@ tic
 % # *No interactivity* _Mathmatica's_ notebook (and also python notebooks) are the gold standard here, where comments, text, data, figures and code are incorporated into a single, interactive, notebook. 
 % # *No movies in final PDF* But you don't have movies in papers either
 % # *Need to re-compile PDF when you change your code *
-% 
+% # *only works with git* But it should be trivial to modify it for other version control systems
 
 %% How to do it
 % Now that you are convinced that this is a good way, the rest of this document describes how to restructure your code and methods to automatically make PDFs from MATLAB code. 
@@ -82,6 +82,16 @@ tic
 %
 %  latex --version
 %
+
+%% 4. Structure your m file
+% 
+% # Block comments beginning with %% are printed as text in the PDF. Look at the source of this file or read the docs. 
+% # Make sure your figures have a nice paper size. See the source for the syntax and save it as a snippet
+% # Delete figures as you create them. Look at the source for the correct syntax.  
+
+
+%% 5. Make your PDF
+% *After* committing all your changes, run |makePDF| to generate your PDF. It will be stored in a holder called |html|. Calling |makePDF| with no arguments will generate a PDF from the last modified file. 
 
 
 %% Example Figure 
