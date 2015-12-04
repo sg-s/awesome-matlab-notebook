@@ -53,7 +53,7 @@ tic
 % 
 % # *No interactivity* _Mathmatica's_ notebook (and also python notebooks) are the gold standard here, where comments, text, data, figures and code are incorporated into a single, interactive, notebook. 
 % # *No movies in final PDF* But you don't have movies in papers either
-% # *Need to re-compile PDF when you change your code *
+% # *Need to re-compile PDF when you change your code*
 % # *only works with git* But it should be trivial to modify it for other version control systems
 
 %% How to do it
