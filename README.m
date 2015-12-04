@@ -74,6 +74,17 @@ tic
 %%
 % |makePDF| is a wrapper function around MATLAB's |publish| that does it right. 
 
+%%
+% Assuming you are using |git|, your |.gitignore| file should look something like this (change as needed):
+%
+%  .DS_Store
+%  .gitignore
+%  *.mat
+%  html/
+%  *.pdf
+% 
+
+
 %% 2. Use a text editor 
 % Use a programmer's text editor like SublimeText or emacs. Install MATLAB's linter and build systems. Use snippets and autocompletion. A template for every document that you want to make into a PDF is included in this repo. 
 
