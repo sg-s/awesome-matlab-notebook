@@ -42,8 +42,8 @@ tic
 %%
 % This workflow has many advantages:
 %
-% # *One Script from raw data to finalised PDF*. The ideal situation (for me) is if scientists free not only their code but also their data. The act of publishing then would entail people making all their raw data available, with scripts that operate on this raw data and make the final figures in their papers (or, even better, the whole paper). This way, you know _precisely_ what analysis they ran on their data, and how they got to their pretty pictures. 
-% # *Automatic version control of code and PDFs.* Every PDF can be uniquely identified to a point in your git history, and every PDF ever generated can be regenerated at any time. This also means that you can precisely know which code was used to generate which figure. (Look at the bottom of this PDF to checkout the code that generated this). 
+% # *One Script from raw data to finalised PDF*. The ideal situation (for me) is if scientists free not only their code but also their data. The act of publishing then would entail people making all their raw data available, with scripts that operate on this raw data and make the final figures in their papers (or, even better, the whole paper). This way, you know _precisely_ what analysis they ran on their data, and how they got to their pretty pictures. Even if you're not a radical like I am, you probably want to adopt this system because it is also the most secure, and avoids the problem of not knowing which plot came from which data and which version of your code (see below). 
+% # *Automatic version control of code and PDFs.* Every PDF can be uniquely identified to a point in your git history, and every PDF ever generated can be regenerated at any time. This also means that you can precisely know which code was used to generate which figure. (Look at the bottom of this PDF to checkout the code that generated this. As an exercise, you can generate previous version of this PDF if you want). 
 % # *hashed cache means quick builds of PDFs*. caching intermediate data can greatly speed up subsequent code execution. Do it. But you don't want to mess around with naming this files, or figuring out where they are. |cache.m| is a universal, hash-based caching system that solves all these problems. 
 % # *Your paper writes itself* Your paper is ultimately a description of what you did, and what you saw. There's no reason why _what you did_ shouldn't be in the comments of the code you write.
 % # *Publication-quality figures* PDFs made in this workflow have a nice embedded vector graphics that can be zoomed into infinitely. 
@@ -102,7 +102,7 @@ tic
 
 
 %% 5. Make your PDF
-% *After* committing all your changes, run |makePDF| to generate your PDF. It will be stored in a holder called |html|. Calling |makePDF| with no arguments will generate a PDF from the last modified file. 
+% *After* committing all your changes, run |makePDF| to generate your PDF. It will be stored in a folder called |html|. Calling |makePDF| with no arguments will generate a PDF from the last modified file. 
 
 
 %% Example Figure 
@@ -122,6 +122,9 @@ if being_published
 end
 
 
+%%
+% The following information is automatically generated (see the source), and helps you identify every document, and ensures that you can always know precisely which code generated the figures in this document. 
+
 %% Version Info
 % The file that generated this document is called:
 disp(mfilename)
@@ -133,7 +136,7 @@ disp(dataHash(strcat(mfilename,'.m'),Opt))
 
 %%
 % This file should be in this commit:
-[status,m]=unix('git rev-parse HEAD');
+[status,m]=unix('git rev-parse HEAD'); % won't work on Windows
 if ~status
 	disp(m)
 end
