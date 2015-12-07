@@ -121,6 +121,8 @@ if being_published
 	delete(gcf)
 end
 
+clear all
+
 
 %%
 % The following information is automatically generated (see the source), and helps you identify every document, and ensures that you can always know precisely which code generated the figures in this document. 
