@@ -121,7 +121,47 @@ if being_published
 	delete(gcf)
 end
 
-clear all
+%% Example Workflows:
+% The following examples show you typical things that you might want to do in this workflow:
+
+%% 1. Make a PDF with the current state of analysis
+% You are at the stage where you have collected some data, and have written an analysis script, and want to enter this version of the analysis (and the resulting PDF) into the historical record. You want to do the following in your bash prompt:
+
+%% 
+% 
+%  # bash
+%  cd /where/my/code/is/
+%  git add -A .
+%  git commit -m 'descriptive comment'
+%  git push
+% 
+
+%% 
+% Then, in the MATLAB prompt, you want to make the figure:
+% 
+%  % matlab
+%  makePDF
+%
+
+%%
+% makePDF with no arguments should work if it is the last file to be modified. If not, specify the file name. 
+
+%% 2. Reproduce an old figure
+% You are at advanced state of your project, and a co-worker bursts into your office waving a piece of paper. It is a print-out of an old PDF, with an analysis you did 6 months ago, using techniques you scrapped 3 months ago. But she has found something interesting in one of the plots you have made, and wants you to reproduce this. Read the identifying information from the PDF (it should have the commit in the end) and do the following:
+
+%%
+% 
+%  # git
+%  git checkout -b 'exciting-old-branch-name' <hash from PDF>
+%  # verify that the hash of the file in question matches
+%  md5 <file-name> 
+% 
+
+%%
+% Now, in your MATLAB prompt, you can reproduce that exact PDF using:
+%
+%  makePDF('filename.m')
+% 
 
 
 %%
