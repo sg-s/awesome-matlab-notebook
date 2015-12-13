@@ -1,4 +1,4 @@
-% 
+% awesome-matlab-notebook (readme)
 % 
 % created by Srinivas Gorur-Shandilya at 10:08 , 04 December 2015. Contact me at http://srinivas.gs/contact/
 % 
@@ -51,7 +51,8 @@ tic
 %% 
 % There are some downsides to this:
 % 
-% # *No interactivity* _Mathmatica's_ notebook (and also python notebooks) are the gold standard here, where comments, text, data, figures and code are incorporated into a single, interactive, notebook. 
+% # *not Windows friendly* This workflow assumes you're running a *nix-like OS. It should be possible to extend this to Windows systems, but this is beyond the scope of this document. 
+% # *No interactivity* _Mathematica's_ notebook (and also python notebooks) are the gold standard here, where comments, text, data, figures and code are incorporated into a single, interactive, notebook. 
 % # *No movies in final PDF* But you don't have movies in papers either
 % # *Need to re-compile PDF when you change your code*
 % # *only works with git* But it should be trivial to modify it for other version control systems
@@ -66,7 +67,10 @@ tic
 %  
 
 %%
-% |prettyFig| is a function that automatically prettifies your figures, making it look nicer and more readable. prettyFig can also be called with particular arguments to change many figure properties with one stroke. 
+% and remember to add these to your system path. 
+
+%%
+% |prettyFig| is a function that automatically prettifies your figures, making it look nicer and more readable. |prettyFig| can also be called with particular arguments to change many figure properties with one stroke. 
 
 %% 
 % |cache| is my hash-based cache system. |cache(dataHash(X),Y)| stores Y with the hash of X, and |cache(dataHash(X)| retrieves Y. 
@@ -86,7 +90,7 @@ tic
 
 
 %% 2. Use a text editor 
-% Use a programmer's text editor like SublimeText or emacs. Install MATLAB's linter and build systems. Use snippets and autocompletion. A template for every document that you want to make into a PDF is included in this repo. 
+% Use a programmer's text editor like *SublimeText* or *emacs*. Install MATLAB's linter and build systems. Use snippets and autocompletion. A template for every document that you want to make into a PDF is included in this repo. 
 
 %% 3. Install |pdflatex|
 % You should have latex installed. Check that you do with:
@@ -162,6 +166,7 @@ end
 %
 %  makePDF('filename.m')
 % 
+
 
 
 %%
