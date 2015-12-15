@@ -45,6 +45,10 @@ end
 
 t = toc;
 
+%%
+% This file has the following external dependencies:
+showDependencyHash(mfilename);
+
 %% 
 % This document was built in: 
 disp(strcat(oval(t,3),' seconds.'))

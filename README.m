@@ -44,6 +44,7 @@ tic
 %
 % # *One Script from raw data to finalised PDF*. The ideal situation (for me) is if scientists free not only their code but also their data. The act of publishing then would entail people making all their raw data available, with scripts that operate on this raw data and make the final figures in their papers (or, even better, the whole paper). This way, you know _precisely_ what analysis they ran on their data, and how they got to their pretty pictures. Even if you're not a radical like I am, you probably want to adopt this system because it is also the most secure, and avoids the problem of not knowing which plot came from which data and which version of your code (see below). 
 % # *Automatic version control of code and PDFs.* Every PDF can be uniquely identified to a point in your git history, and every PDF ever generated can be regenerated at any time. This also means that you can precisely know which code was used to generate which figure. (Look at the bottom of this PDF to checkout the code that generated this. As an exercise, you can generate previous version of this PDF if you want). 
+% # *Accountability extends to external repositories* Sometimes, your analysis scripts may rely on complex code that lives in its own repository. This workflow automatically finds all dependencies of the script being compiled, and points to their git hashes so you can restore to that state if need be. 
 % # *hashed cache means quick builds of PDFs*. caching intermediate data can greatly speed up subsequent code execution. Do it. But you don't want to mess around with naming this files, or figuring out where they are. |cache.m| is a universal, hash-based caching system that solves all these problems. 
 % # *Your paper writes itself* Your paper is ultimately a description of what you did, and what you saw. There's no reason why _what you did_ shouldn't be in the comments of the code you write.
 % # *Publication-quality figures* PDFs made in this workflow have a nice embedded vector graphics that can be zoomed into infinitely. 
@@ -54,7 +55,7 @@ tic
 % # *not Windows friendly* This workflow assumes you're running a *nix-like OS. It should be possible to extend this to Windows systems, but this is beyond the scope of this document. 
 % # *No interactivity* _Mathematica's_ notebook (and also python notebooks) are the gold standard here, where comments, text, data, figures and code are incorporated into a single, interactive, notebook. 
 % # *No movies in final PDF* But you don't have movies in papers either
-% # *Need to re-compile PDF when you change your code*
+% # *Need to re-compile PDF when you change your code* which can be a drag
 % # *only works with git* But it should be trivial to modify it for other version control systems
 
 %% How to do it
@@ -187,6 +188,10 @@ disp(dataHash(strcat(mfilename,'.m'),Opt))
 if ~status
 	disp(m)
 end
+
+%%
+% This file has the following external dependencies:
+showDependencyHash(mfilename);
 
 t = toc;
 
