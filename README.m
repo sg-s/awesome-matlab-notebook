@@ -97,7 +97,7 @@ tic
 % This repo comes with some sublime text snippets (for example, a skeleton for this entire document). Install them using (on Mac OS X):
 % 
 %  cd /where/is/this/repo
-%  cp *.sublime-snippet /Users/sigbhu/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
+%  cp *.sublime-snippet ~/Library/Application\ Support/Sublime\ Text\ 3/Packages/User/
 % 
 
 %% 3. Install |pdflatex|
