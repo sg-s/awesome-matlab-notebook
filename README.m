@@ -63,7 +63,7 @@ tic
 
 %% 1. Grab Code
 % 
-%  git clone https://github.com/sg-s/awesome-matlab-publish
+%  git clone https://github.com/sg-s/awesome-matlab-notebook
 %  git clone https://github.com/sg-s/srinivas.gs_mtools
 %  
 
