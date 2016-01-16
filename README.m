@@ -45,7 +45,8 @@ pHeader;
 
 %% 0. Special Note for Windows Users
 % It is now possible to use this workflow (in a limited fashion) on Windows computers. Make sure you do the following:
-% # Install git so that you can use it from the command prompt. Don't install git bash. 
+% 
+% # Install git so that you can use it from the command prompt. Don't install git bash. You know you've done the right thing when you type "git" in the command prompt and you don't get an error message. 
 % # Scripts here assume you have conventional paths (C:\Program Files), etc. 
 
 %% 1. Grab Code
