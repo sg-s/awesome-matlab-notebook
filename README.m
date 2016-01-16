@@ -6,27 +6,10 @@
 % To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.ts
 
 
-% add homebrew path
-path1 = getenv('PATH');
-if isempty(strfind(path1,':/usr/local/bin'))
-    path1 = [path1 ':/usr/local/bin'];
-end
-setenv('PATH', path1);
-
-% this code determines if this function is being called
-calling_func = dbstack;
-being_published = 0;
-if ~isempty(calling_func)
-	if find(strcmp('publish',{calling_func.name}))
-		being_published = 1;
-		unix(['tag -a publish-failed ',which(mfilename)]);
-		unix(['tag -r published ',which(mfilename)]);
-	end
-end
-tic
+pHeader;
 
 %% Philosophy 
-% The point of this document is to document *my* way of generating self-documenting code and beautiful and accurate visualizations of data. Before I tell you what my workflow is, here is a strawman example of how a real scientist used to organise and name their code:
+% The point of this document is to document *my* way of generating self-documenting code and appealing and accurate visualizations of data. Before I tell you what my workflow is, here is a strawman example of how a real scientist used to organise and name their code:
 % 
 % <</code/awesome-matlab-notebook/images/analysis.png>>
 
@@ -52,7 +35,6 @@ tic
 %% 
 % There are some downsides to this:
 % 
-% # *not Windows friendly* This workflow assumes you're running a *nix-like OS. It should be possible to extend this to Windows systems, but this is beyond the scope of this document. 
 % # *No interactivity* _Mathematica's_ notebook (and also python notebooks) are the gold standard here, where comments, text, data, figures and code are incorporated into a single, interactive, notebook. 
 % # *No movies in final PDF* But you don't have movies in papers either
 % # *Need to re-compile PDF when you change your code* which can be a drag
@@ -60,6 +42,11 @@ tic
 
 %% How to do it
 % Now that you are convinced that this is a good way, the rest of this document describes how to restructure your code and methods to automatically make PDFs from MATLAB code. 
+
+%% 0. Special Note for Windows Users
+% It is now possible to use this workflow (in a limited fashion) on Windows computers. Make sure you do the following:
+% # Install git so that you can use it from the command prompt. Don't install git bash. 
+% # Scripts here assume you have conventional paths (C:\Program Files), etc. 
 
 %% 1. Grab Code
 % 
@@ -182,33 +169,4 @@ end
 
 %% Version Info
 % The file that generated this document is called:
-disp(mfilename)
-
-%%
-% and its md5 hash is:
-Opt.Input = 'file';
-disp(dataHash(strcat(mfilename,'.m'),Opt))
-
-%%
-% This file should be in this commit:
-[status,m]=unix('git rev-parse HEAD'); % won't work on Windows
-if ~status
-	disp(m)
-end
-
-%%
-% This file has the following external dependencies:
-showDependencyHash(mfilename);
-
-t = toc;
-
-%% 
-% This document was built in: 
-disp(strcat(oval(t,3),' seconds.'))
-
-% tag the file as being published 
-
-if being_published
-	unix(['tag -a published ',which(mfilename)]);
-	unix(['tag -r publish-failed ',which(mfilename)]);
-end
+pFooter;
