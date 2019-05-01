@@ -11,12 +11,12 @@ pdflib.header;
 %% Philosophy
 % The point of this document is to document *my* way of generating self-documenting code and appealing and accurate visualizations of data. Before I tell you what my workflow is, here is a strawman example of how a real scientist used to organise and name their code:
 %
-% <</home/alec/awesome-matlab-notebook/images/analysis.png>>
+% <</home/alec/code/awesome-matlab-notebook/images/analysis.png>>
 
 %%
 % This is clearly a terrible way to do things. Here is how I do this:
 %
-% <</home/alec/awesome-matlab-notebook/images/workflow.png>>
+% <</home/alec/code/awesome-matlab-notebook/images/workflow.png>>
 
 %%
 %
@@ -129,7 +129,7 @@ delete(gcf)
 %%
 %
 %  # bash
-%  cd /where/my/home/alec/is/
+%  cd /where/my/home/alec/code/is/
 %  git add -A .
 %  git commit -m 'descriptive comment'
 %  git push
