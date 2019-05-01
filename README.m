@@ -59,13 +59,13 @@ pdflib.header;
 % and remember to add these to your system path.
 
 %%
-% |prettyFig| is a function that automatically prettifies your figures, making it look nicer and more readable. |prettyFig| can also be called with particular arguments to change many figure properties with one stroke.
+% |figlib.pretty| is a function that automatically prettifies your figures, making it look nicer and more readable. |figlib.pretty| can also be called with particular arguments to change many figure properties with one stroke.
 
 %%
 % |cache| is my hash-based cache system. |cache(dataHash(X),Y)| stores Y with the hash of X, and |cache(dataHash(X)| retrieves Y.
 
 %%
-% |makePDF| is a wrapper function around MATLAB's |publish| that does it right.
+% |pdflib.make| is a wrapper function around MATLAB's |publish| that does it right.
 
 %%
 % Assuming you are using |git|, your |.gitignore| file should look something like this (change as needed):
@@ -102,7 +102,7 @@ pdflib.header;
 
 
 %% 5. Make your PDF
-% *After* committing all your changes, run |makePDF| to generate your PDF. It will be stored in a folder called |html|. Calling |makePDF| with no arguments will generate a PDF from the last modified file.
+% *After* committing all your changes, run |pdflib.make| to generate your PDF. It will be stored in a folder called |html|. Calling |pdflib.make| with no arguments will generate a PDF from the last modified file.
 
 
 %% Example Figure
@@ -139,11 +139,11 @@ delete(gcf)
 % Then, in the MATLAB prompt, you want to make the figure:
 %
 %  % matlab
-%  makePDF
+%  pdflib.make
 %
 
 %%
-% makePDF with no arguments should work if it is the last file to be modified. If not, specify the file name.
+% pdflib.make with no arguments should work if it is the last file to be modified. If not, specify the file name.
 
 %% 2. Reproduce an old figure
 % You are at advanced state of your project, and a co-worker bursts into your office waving a piece of paper. It is a print-out of an old PDF, with an analysis you did 6 months ago, using techniques you scrapped 3 months ago. But she has found something interesting in one of the plots you have made, and wants you to reproduce this. Read the identifying information from the PDF (it should have the commit in the end) and do the following:
@@ -159,7 +159,7 @@ delete(gcf)
 %%
 % Now, in your MATLAB prompt, you can reproduce that exact PDF using:
 %
-%  makePDF('filename.m')
+%  pdflib.make('filename.m')
 %
 
 
