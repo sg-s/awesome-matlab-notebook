@@ -117,10 +117,8 @@ ylabel('Something')
 figlib.pretty()
 figlib.tight()
 
-if being_published
-	snapnow
-	delete(gcf)
-end
+pdflib.snap
+delete(gcf)
 
 %% Example Workflows:
 % The following examples show you typical things that you might want to do in this workflow:
