@@ -104,6 +104,58 @@ pdflib.header;
 %% 5. Make your PDF
 % *After* committing all your changes, run |pdflib.make| to generate your PDF. It will be stored in a folder called |html|. Calling |pdflib.make| with no arguments will generate a PDF from the last modified file.
 
+%% Example Markup
+% The following shows explicit examples of how LaTeX-like markup works in MATLAB scripts.
+
+%%% This is a section title without a section break
+% this is descriptive text
+% _italics_
+% *bold*
+% |monospaced|
+% trademark (TM)
+% rights reserved (R)
+%
+% * this is a
+% * bulleted
+% * list
+%
+% # this is a
+% # numbered
+% # list
+%
+% MATLAB(R) Code
+% x = {'this', 'is', 'some', 'code'}
+% for ii = 1:length(x)
+% 	disp(x{ii})
+% end
+%
+% inline equation: $2 + 2 = 4$
+%
+% block equation
+% $$ E = mc^2 $$
+%
+% LaTeX markup
+% <latex>
+% \begin{tabular}{|r|r|}
+% \hline $n$&$n!$\\
+% \hline 1&1\\ 2&2\\ 3&6\\
+% \hline
+% \end{tabular}
+% </latex>
+%
+
+%% Example Variables
+% Here is the output of the |summary| function for the built-in |patients| dataset.
+
+load patients
+BloodPressure = [Systolic Diastolic];
+T = table(Gender, Age, Smoker, BloodPressure, 'RowNames', LastName);
+T.Properties.Description = 'Simulated patient data';
+T.Properties.VariableUnits =  {''  'Yrs' ''  'mm Hg'};
+T.Properties.VariableDescriptions{4} = 'Systolic/Diastolic';
+
+format compact
+summary(T)
 
 %% Example Figure
 % This is an example figure showing how MATLAB figures are incorporated into the PDF
