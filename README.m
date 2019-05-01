@@ -109,11 +109,23 @@ pdflib.header;
 
 %%% This is a section title without a section break
 % this is descriptive text
+%
 % _italics_
+%
 % *bold*
+%
 % |monospaced|
 % trademark (TM)
+%
 % rights reserved (R)
+%
+%
+% inline equation: $2 + 2 = 4$
+%
+% block equation
+% $$ E = mc^2 $$
+%
+% 
 %
 % * this is a
 % * bulleted
@@ -129,13 +141,6 @@ pdflib.header;
 %   for i = 1:10
 %       disp x
 %   end
-%
-
-%
-% inline equation: $2 + 2 = 4$
-%
-% block equation
-% $$ E = mc^2 $$
 %
 
 %% LaTeX Markup Example
