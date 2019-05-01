@@ -62,7 +62,7 @@ pdflib.header;
 % |figlib.pretty| is a function that automatically prettifies your figures, making it look nicer and more readable. |figlib.pretty| can also be called with particular arguments to change many figure properties with one stroke.
 
 %%
-% |cache| is my hash-based cache system. |cache(dataHash(X),Y)| stores Y with the hash of X, and |cache(dataHash(X)| retrieves Y.
+% |cache| is my hash-based cache system. |cache(dataHash(X),Y)| stores Y with the hash of X, and |cache(dataHash(X))| retrieves Y.
 
 %%
 % |pdflib.make| is a wrapper function around MATLAB's |publish| that does it right.
