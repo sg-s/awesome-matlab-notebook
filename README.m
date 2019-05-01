@@ -123,18 +123,22 @@ pdflib.header;
 % # numbered
 % # list
 %
-% MATLAB(R) Code
-% x = {'this', 'is', 'some', 'code'}
-% for ii = 1:length(x)
-% 	disp(x{ii})
-% end
+
+%% MATLAB(R) Code
+%
+%   for i = 1:10
+%       disp x
+%   end
+%
+
 %
 % inline equation: $2 + 2 = 4$
 %
 % block equation
 % $$ E = mc^2 $$
 %
-% LaTeX markup
+
+%% LaTeX Markup Example
 % <latex>
 % \begin{tabular}{|r|r|}
 % \hline $n$&$n!$\\
@@ -142,7 +146,6 @@ pdflib.header;
 % \hline
 % \end{tabular}
 % </latex>
-%
 
 %% Example Variables
 % Here is the output of the |summary| function for the built-in |patients| dataset.
