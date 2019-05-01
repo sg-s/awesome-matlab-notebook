@@ -18,11 +18,6 @@ $Revision: 1.1.6.7 $  $Date: 2008/02/29 12:45:30 $
   <xsl:output method="text" indent="no"/>
 
 <xsl:template match="mscript">
-%%% Local Variables:
-%%% coding: utf-8
-%%% mode: latex
-%%% TeX-master: "do"
-%%% End:
 % This LaTeX was auto-generated from an M-file by MATLAB.
 % To make changes, update the M-file and republish this document.
 
@@ -31,7 +26,7 @@ $Revision: 1.1.6.7 $  $Date: 2008/02/29 12:45:30 $
 \usepackage{color}
 
 \usepackage[utf8x]{inputenc}
-\DeclareUnicodeCharacter{0215}{\ensuremath{\times}}
+\DeclareUnicodeCharacter{U+00D7}{\times}
 
 \sloppy
 \definecolor{lightgray}{gray}{0.5}
