@@ -114,7 +114,8 @@ plot(rand(100,1))
 xlabel('Time')
 ylabel('Something')
 
-prettyFig()
+figlib.pretty()
+figlib.tight()
 
 if being_published
 	snapnow
