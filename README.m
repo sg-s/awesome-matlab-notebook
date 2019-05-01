@@ -6,7 +6,7 @@
 % To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.ts
 
 
-pHeader;
+pdflib.header;
 
 %% Philosophy
 % The point of this document is to document *my* way of generating self-documenting code and appealing and accurate visualizations of data. Before I tell you what my workflow is, here is a strawman example of how a real scientist used to organise and name their code:
@@ -170,4 +170,4 @@ end
 
 %% Version Info
 % The file that generated this document is called:
-pFooter;
+pdflib.footer;
