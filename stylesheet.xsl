@@ -5,7 +5,7 @@ This is an XSL stylesheet which converts mscript XML files into XSLT.
 Use the XSLT command to perform the conversion.
 
 Ned Gulley and Matthew Simoneau, September 2003
-Copyright 1984-2007 The MathWorks, Inc. 
+Copyright 1984-2007 The MathWorks, Inc.
 $Revision: 1.1.6.7 $  $Date: 2008/02/29 12:45:30 $
 -->
 
@@ -25,6 +25,9 @@ $Revision: 1.1.6.7 $  $Date: 2008/02/29 12:45:30 $
 \usepackage{graphicx}
 \usepackage{color}
 
+\usepackage[utf8x]{inputenc}
+\DeclareUnicodeCharacter{0215}{\ensuremath{\times}}
+
 \sloppy
 \definecolor{lightgray}{gray}{0.5}
 \setlength{\parindent}{10pt}
@@ -43,7 +46,7 @@ $Revision: 1.1.6.7 $  $Date: 2008/02/29 12:45:30 $
 
 <xsl:apply-templates select="cell[1]/text"/>
 </xsl:if>
-    
+
     <xsl:variable name="body-cells" select="cell[not(@style = 'overview')]"/>
 
     <!-- Include contents if there are titles for any subsections. -->
@@ -52,7 +55,7 @@ $Revision: 1.1.6.7 $  $Date: 2008/02/29 12:45:30 $
         <xsl:with-param name="body-cells" select="$body-cells"/>
       </xsl:call-template>
     </xsl:if>
-    
+
     <!-- Loop over each cell -->
     <xsl:for-each select="$body-cells">
         <!-- Title of cell -->
@@ -85,7 +88,7 @@ $Revision: 1.1.6.7 $  $Date: 2008/02/29 12:45:30 $
 
 
 \end{document}
-    
+
 </xsl:template>
 
 
@@ -236,7 +239,7 @@ $Revision: 1.1.6.7 $  $Date: 2008/02/29 12:45:30 $
     <xsl:when test="$next > $count">
       <xsl:value-of select="$string"/>
     </xsl:when>
-    <xsl:when test="contains($string, $first/from)">      
+    <xsl:when test="contains($string, $first/from)">
       <xsl:call-template name="replace">
         <xsl:with-param name="string"
                         select="substring-before($string, $first/from)"/>
