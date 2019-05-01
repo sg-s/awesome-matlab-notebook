@@ -26,7 +26,7 @@ $Revision: 1.1.6.7 $  $Date: 2008/02/29 12:45:30 $
 \usepackage{color}
 
 \usepackage[utf8x]{inputenc}
-\DeclareUnicodeCharacter{U+00D7}{\times}
+\DeclareUnicodeCharacter{0x97}{\times}
 
 \sloppy
 \definecolor{lightgray}{gray}{0.5}
